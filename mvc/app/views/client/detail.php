@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,7 +104,7 @@
     </div>
     <div class="row" style="margin-top: 20px; ">
 
-        <?php foreach ($product as $item):?>
+        <?php foreach ($room as $item):?>
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">

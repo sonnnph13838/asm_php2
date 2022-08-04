@@ -118,7 +118,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $item ->name ?></h5>
                         <p class="card-text"><?= $item ->price ?></p>
-                        <a href="/detail_room" class="btn btn-primary">Book now</a>
+                        <a href="/detail_room?id=<?= $item ->id ?>&id_kfr=<?= $item->id_kind_of_room ?>" class="btn btn-primary">Book now</a>
                     </div>
                 </div>
             </div>
