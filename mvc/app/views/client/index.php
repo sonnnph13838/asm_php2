@@ -30,7 +30,7 @@
                 <li class="nav-item"><a href="/rooms" class="nav-link link-dark px-2">Rooms</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Pages</a></li>
                 <li class="nav-item">
-                    <select name="" id="" style="border:none">
+                    <select name="" id="" style="border:none;margin-top:10px">
                         <option value="0">Categories</option>
                         <?php foreach($ctg as $l) :?>
                             <option value="<?= $l->id?>"><?= $l->name?></option>
