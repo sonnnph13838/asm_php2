@@ -9,11 +9,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = RoomModel::all();
-        $this->view('client.rooms', ['product' => $products]);
+        $ctgs = CategoryModel::all();
+        $products = RoomModel::allNew();
+        $this->view('client.rooms', ['product' => $products ,'ctg' => $ctgs]);
     }
     public function detail()
     {
+        $ctgs = CategoryModel::all();
         $id = $_GET['id'];
         $id_for = $_GET['id_kfr'];
         $s = new RoomModel;
@@ -22,7 +24,7 @@ class ProductController extends Controller
         // var_dump($kind);die;
         $findRoom = RoomModel::find($id);
         $rooms = array($findRoom);
-        $this->view('client.detail_room',['room'=>$rooms,'kindRooms'=>$kind]);
+        $this->view('client.detail_room',['room'=>$rooms,'kindRooms'=>$kind, 'ctg' => $ctgs]);
     }
 }
 
