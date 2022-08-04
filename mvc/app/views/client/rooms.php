@@ -109,9 +109,8 @@
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= $item->name ?></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text"><?= $item->description ?></p>
+                    <a href="detail_room?id=<?= $item->id ?>&id_kfr=<?= $item->id_kind_of_room ?>" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>

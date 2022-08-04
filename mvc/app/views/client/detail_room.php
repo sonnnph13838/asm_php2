@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,13 +63,14 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="card bg-dark text-white">
-                <img src="https://statics.vntrip.vn/uploads/deal/20220608_342510_7.jpg" class="card-img" alt="...">
+                <?php foreach($room as $r) : ?>
+                <img src="/images/<?=$r->image?>" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text">Giá chỉ từ: 1.500.000đ</p>
+                    <h5 class="card-title"><?=$r->name?></h5>
+                    <p class="card-text"><?=$r->description?></p>
+                    <p class="card-text">Giá chỉ từ: <?=$r->price?> đ</p>
                 </div>
+                
             </div>
             <div class="sp" style="padding: 20px ;"></div>
             <div class="d-grid gap-2 col-6 mx-auto">
@@ -89,41 +91,24 @@
             <div class="sp" style="padding: 20px ;"></div>
             <div class="ct">
                 <h4 class="h4">Thông tin chi tiết</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus excepturi dignissimos dolore libero reiciendis ea delectus nihil voluptas impedit, unde voluptate explicabo ut molestiae non assumenda debitis hic ducimus quasi.</p>
+                <p><?= $r->features?></p>
             </div>
+            <?php endforeach;?>
             <div class="sp" style="padding: 20px ;"></div>
             <h3 class="h3">Related Rooms</h3>
             <div class="row" style="margin-top: 20px; ">
+            <?php foreach($kindRooms as $k):?>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="/images/<?=$k->image?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <h5 class="card-title"><?=$k->name?></h5>
+                          <p class="card-text"><?=$k->description?></p>
+                          <a href="detail_room?id=<?= $k->id?>&id_kfr=<?= $k->id_kind_of_room ?>" class="btn btn-primary">Go somewhere</a>
                         </div>
                       </div>
                 </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                </div>
+            <?php endforeach;?>
             </div>
             <div class="footer"
                 style="margin-top:50px; background:aqua; padding: 30px; text-align: center; color: brown; font-size: 2em;">

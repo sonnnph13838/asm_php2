@@ -79,7 +79,8 @@ class BaseModel
     {
         $model = new static;
         $model->queryBuilder = "SELECT * FROM $model->tableName WHERE $column
-        $oprerator '$value'";
+        $oprerator $value";
+        //var_dump( $model->queryBuilder);die;
         return $model;
     }
 
