@@ -3,16 +3,16 @@
 
 namespace App\Controllers;
 
-use App\Models\ProductModel;
+use App\Models\RoomModel;
 use App\Models\CategoryModel;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $products = ProductModel::all3();
+        $products = RoomModel::allNew();
         $ctgs = CategoryModel::all();
-        $this->view('home.index', ['product' => $products, 'ctg' => $ctgs]);
+        $this->view('client.index', ['product' => $products, 'ctg' => $ctgs]);
     }
 }
 

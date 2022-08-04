@@ -7,7 +7,7 @@ class BaseModel
     public function __construct()
     {
         try {
-            $this->conn = new \PDO("mysql:host=localhost; dbname=lab3_php2;charset=utf8", 'root', '');
+            $this->conn = new \PDO("mysql:host=localhost; dbname=laravel_ass;charset=utf8", 'root', '');
             $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             throw $e;
@@ -18,6 +18,14 @@ class BaseModel
     {
         $model = new static;
         $sqlBuilder = "SELECT * FROM " . $model->tableName;
+        $stmt = $model->conn->prepare($sqlBuilder);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS);
+    }
+    public static function allNew()
+    {
+        $model = new static;
+        $sqlBuilder = "SELECT * FROM " . $model->tableName . "  order by id desc limit 9";
         $stmt = $model->conn->prepare($sqlBuilder);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS);
@@ -80,7 +88,12 @@ class BaseModel
         $this->queryBuilder .= " AND $column $operator '$value'";
         return $this;
     }
-
+    public static function delete($id){
+        $model = new static;
+        $sqlBuilder = "DELETE FROM " . $model->tableName . " WHERE id=" . $id;
+        $stmt = $model->conn->prepare($sqlBuilder);
+        return $stmt->execute();
+    }
     public function get()
     {
         $stmt = $this->conn->prepare($this->queryBuilder);

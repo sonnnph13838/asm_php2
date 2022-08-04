@@ -29,10 +29,15 @@
                 </li>
                 <li class="nav-item"><a href="/rooms" class="nav-link link-dark px-2">Rooms</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Pages</a></li>
+                <li class="nav-item">
+                    <select name="" id="" style="border:none">
+                        <option value="0">Categories</option>
+                        <?php foreach($ctg as $l) :?>
+                            <option value="<?= $l->id?>"><?= $l->name?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Posts</a></li>
-                <?php foreach ($ctg as $x) :?>
-                    <a href="<?= "/detail?id=$x->id" ?>"><?= $x->cate_name ?></a>
-                <?php endforeach;?>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">News</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contacts</a></li>
             </ul>
@@ -107,7 +112,7 @@
     </div>
     <div class="row" style="margin-top: 20px;margin-bottom: 20px;">
         <?php foreach ($product as $item) :?>
-            <div class="col">
+            <div class="col" style="margin-top: 20px;margin-bottom: 5px;">
                 <div class="card" style="width: 18rem;">
                     <img src="<?= $item ->image ?>" class="card-img-top" alt="...">
                     <div class="card-body">

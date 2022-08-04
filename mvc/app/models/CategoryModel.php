@@ -7,5 +7,5 @@ use App\Models\BaseModel;
 
 class CategoryModel extends BaseModel
 {
-    protected $tableName = 'categories';
+    protected $tableName = 'kind_of_room';
 }

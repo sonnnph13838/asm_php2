@@ -10,27 +10,27 @@ class ProductController extends Controller
     public function index()
     {
         $products = ProductModel::all();
-        $this->view('home.rooms', ['product' => $products]);
+        $this->view('client.rooms', ['product' => $products]);
     }
     public function detail()
     {
-        $this->view('home.detail_room');
+        $this->view('client.detail_room');
     }
     public function show(){
         $id = $_GET['id'] ?? null;
         $product = ProductModel::find($id);
 //        if(!$id){
-//            header("location: /home");
+//            header("location: /client");
 //            die;
 //        }
         $product = ProductModel::find($id);
 
 //        if(!$product){
-//            header("location: /home");
+//            header("location: /client");
 //            die;
 //        }
 
-        return $this->view('home.detail', ['product'=>$product]);
+        return $this->view('client.detail', ['product'=>$product]);
     }
 }
 
