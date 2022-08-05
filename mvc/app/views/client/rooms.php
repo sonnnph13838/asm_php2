@@ -1,4 +1,4 @@
-<?php include_once 'header.php'?>
+<?php include_once __DIR__.'/layout/header.php'?>
     <div>
         <p class="h3">Rooms</p>
     </div>
@@ -36,4 +36,4 @@
             </ul>
         </nav>
     </div>
-    <?php include_once 'footer.php'?>
+    <?php include_once __DIR__. '/layout/footer.php'?>

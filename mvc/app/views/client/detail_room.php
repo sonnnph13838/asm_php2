@@ -1,5 +1,5 @@
 
-    <?php include_once 'header.php'?>
+    <?php include_once __DIR__. '/layout/header.php'?>
             <div class="card bg-dark text-white">
                 <?php foreach($room as $r) : ?>
                 <img src="/images/<?=$r->image?>" class="card-img" alt="...">
@@ -48,4 +48,4 @@
                 </div>
             <?php endforeach;?>
             </div>
-            <?php include_once 'footer.php'?>
+            <?php include_once __DIR__. '/layout/footer.php'?>

@@ -30,6 +30,14 @@ class BaseModel
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS);
     }
+    public static function all2()
+    {
+        $model = new static;
+        $sqlBuilder = "SELECT * FROM " . $model->tableName . "  order by id desc limit 2";
+        $stmt = $model->conn->prepare($sqlBuilder);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS);
+    }
 
     public static function find($id)
     {

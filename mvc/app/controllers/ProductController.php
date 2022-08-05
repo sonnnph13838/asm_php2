@@ -9,8 +9,15 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $id= $_GET['idType'];
+        if(isset($id)){
+            $product = new RoomModel;
+            $products = $product->where('id_kind_of_room','=',$id)->get();
+        }else{
+            $products = RoomModel::allNew();
+        }
         $ctgs = CategoryModel::all();
-        $products = RoomModel::allNew();
+        
         $this->view('client.rooms', ['product' => $products ,'ctg' => $ctgs]);
     }
     public function detail()
