@@ -9,8 +9,9 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $id= $_GET['idType'];
-        if(isset($id)){
+       
+        if(isset($_GET['idType'])){
+            $id= $_GET['idType'];
             $product = new RoomModel;
             $products = $product->where('id_kind_of_room','=',$id)->get();
         }else{
