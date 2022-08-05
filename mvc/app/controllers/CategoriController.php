@@ -30,8 +30,6 @@ class CategoriController extends Controller
        if(!$errors){
         $cate = new CategoryModel;
         $cate->insert($request);
-        $list = CategoryModel::all();
-        $this->view('admin.categori.list',['list'=>$list]);
        }
        return $this->view(
         'admin.categori.add',
