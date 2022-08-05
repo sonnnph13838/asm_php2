@@ -5,7 +5,7 @@ namespace App\Controllers;
 
 use App\Models\RoomModel;
 use App\Models\CategoryModel;
-class ProductController extends Controller
+class RoomController extends Controller
 {
     public function index()
     {

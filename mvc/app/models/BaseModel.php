@@ -65,10 +65,8 @@ class BaseModel
         $this->queryBuilder .= $cols . "VALUES" . $params;
         $stmt = $this->conn->prepare($this->queryBuilder);
         $stmt->execute($arrs);
-        var_dump($this->queryBuilder);
     }
-
-    public function update($arrs)
+    public function update($arrs,$id)
     {
         $this->queryBuilder = "UPDATE " . $this->tableName . " SET ";
         foreach ($arrs as $key => $value) {
@@ -76,11 +74,11 @@ class BaseModel
         }
 
         $this->queryBuilder = rtrim($this->queryBuilder, ", ");
-        $this->queryBuilder .= " WHERE id=:id";
-        $arrs['id'] = $this->id;
-        var_dump($this->queryBuilder);
+        $this->queryBuilder .= " WHERE id=".$id;
+        //var_dump($this->queryBuilder);die;
         $stmt = $this->conn->prepare($this->queryBuilder);
         $stmt->execute($arrs);
+        return $stmt;
     }
 
     public static function where($column, $oprerator, $value)
