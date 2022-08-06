@@ -5,7 +5,7 @@ use App\Controllers\RoomController;
 use App\Controllers\HomeController;
 use App\Controllers\AdminController;
 use App\Controllers\CategoriController;
-use App\Controllers\UserListController;
+use App\Controllers\UserController;
 use App\Router;
 Router::get('/',[HomeController::class,'index']);
 Router::get('/rooms',[RoomController::class,'index']);
@@ -13,7 +13,9 @@ Router::get('/detail_room',[RoomController::class,'detail']);
 //admin
 Router::get('/admin',[AdminController::class,'indexAdmin']);
 //user
-Router::get('/user',[UserListController::class,'listUser']);
+Router::get('/user',[UserController::class,'listUser']);
+Router::get('/user/edit',[UserController::class,'edit']);
+Router::post('/user/edit',[UserController::class,'saveEdit']);
 //type
 Router::get('/type',[CategoriController::class,'index']);
 Router::get('/type/add',[CategoriController::class,'add']);

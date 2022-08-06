@@ -3,11 +3,12 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">stt</th>
-      <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">ảnh</th>
-      <th scope="col">role</th>
+      <th scope="col">Stt</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Image</th>
+      <th scope="col">Role</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,8 +20,10 @@
       <td><?=$s->name?></td>
       <td><?=$s->email?></td>
       <td>anh</td>
-      <td><?=$s->id_role?></td>
-     
+      <td><?= $s->id_role == 1 ? "Nhân viên" : "Khách hàng" ?></td>
+      <td><button><a href="user/edit?id=<?=$s->id?>">Sửa</a></button>
+          <button><a href="user/del?id=<?=$s->id?>">Xóa</a></button>
+      </td>
     </tr>
     <?php endforeach?>
   </tbody>
