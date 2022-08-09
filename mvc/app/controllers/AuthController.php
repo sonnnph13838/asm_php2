@@ -28,8 +28,7 @@ class AuthController extends Controller
         $log = new UserModel;
         $req = $log->where('email', '=', $_POST['email'])->andWhere('password', '=', $_POST['password'])->get();
         //var_dump($req>0 );die;
-        if (is_array($req) && !(empty($req))) {
-            session_start();
+        if (is_array($req) && !(empty($req))) {        
             $_SESSION['login']['email'] = $_POST['email'];
             //var_dump($_SESSION['login']['email']);die;
             header('Location:' . ADMIN_URL . 'admin');
