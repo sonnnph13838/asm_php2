@@ -61,4 +61,10 @@ class UserController extends Controller
         ]
     );
     }
+    public function del(){
+        $id = $_GET['id'];
+        UserModel::delete($id);
+        $list = UserModel::all();
+        $this->view('admin/user.list',['list'=>$list]);
+    }
 }

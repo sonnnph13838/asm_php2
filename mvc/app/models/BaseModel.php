@@ -63,6 +63,7 @@ class BaseModel
         $params = rtrim($params, ", ") . ")";
         //Noi vao chuoi queryBuilder
         $this->queryBuilder .= $cols . "VALUES" . $params;
+        //var_dump( $this->queryBuilder);die;
         $stmt = $this->conn->prepare($this->queryBuilder);
         $stmt->execute($arrs);
     }
@@ -85,7 +86,7 @@ class BaseModel
     {
         $model = new static;
         $model->queryBuilder = "SELECT * FROM $model->tableName WHERE $column
-        $oprerator $value";
+        $oprerator '$value'";
         //var_dump( $model->queryBuilder);die;
         return $model;
     }
@@ -103,6 +104,7 @@ class BaseModel
     }
     public function get()
     {
+        //var_dump($this->queryBuilder);die;
         $stmt = $this->conn->prepare($this->queryBuilder);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, get_class($this));

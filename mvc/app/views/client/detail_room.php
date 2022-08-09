@@ -5,7 +5,7 @@
                 <img src="/images/<?=$r->image?>" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title"><?=$r->name?></h5>
-                    <p class="card-text"><?=$r->description?></p>
+                    <p class="card-text"><?=$r->discription?></p>
                     <p class="card-text">Giá chỉ từ: <?=$r->price?> đ</p>
                 </div>
                 
@@ -41,7 +41,7 @@
                         <img src="/images/<?=$k->image?>" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title"><?=$k->name?></h5>
-                          <p class="card-text"><?=$k->description?></p>
+                          <p class="card-text"><?=$k->discription?></p>
                           <a href="detail_room?id=<?= $k->id?>&id_kfr=<?= $k->id_kind_of_room ?>" class="btn btn-primary">Go somewhere</a>
                         </div>
                       </div>

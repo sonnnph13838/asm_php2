@@ -10,7 +10,7 @@
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?= $item->name ?></h5>
-                    <p class="card-text"><?= $item->description ?></p>
+                    <p class="card-text"><?= $item->discription ?></p>
                     <a href="detail_room?id=<?= $item->id ?>&id_kfr=<?= $item->id_kind_of_room ?>" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

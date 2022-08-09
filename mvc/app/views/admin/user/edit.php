@@ -28,8 +28,10 @@
                         <?php endif ?>
                     </p>
                 </div>
+                
                 <div class="form-group">
                     <label for="exampleInputEmail1">Image</label>
+                    <img src="/images/<?=$u->image ?>" alt="" width="150px" height="120px">
                     <input type="file" name="image">
                 </div>
             </div>

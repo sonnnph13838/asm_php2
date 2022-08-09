@@ -19,7 +19,7 @@
       <th scope="row"><?=$s->id?></th>
       <td><?=$s->name?></td>
       <td><?=$s->email?></td>
-      <td>anh</td>
+      <td><img src="/images/<?=$s->image ?>" alt="" width="150px" height="120px"></td>
       <td><?= $s->id_role == 1 ? "Nhân viên" : "Khách hàng" ?></td>
       <td><button><a href="user/edit?id=<?=$s->id?>">Sửa</a></button>
           <button><a href="user/del?id=<?=$s->id?>">Xóa</a></button>

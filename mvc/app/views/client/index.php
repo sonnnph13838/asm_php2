@@ -23,12 +23,12 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="/images/<?= $p->image1 ?>" class="img-fluid rounded-start" alt="...">
+                        <img src="/images/<?= $p->image ?>" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title"><?= $p->title ?></h5>
-                            <p class="card-text"><?= $p->description?></p>
+                            <p class="card-text"><?= $p->discription?></p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
