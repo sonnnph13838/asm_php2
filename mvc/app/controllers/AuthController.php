@@ -16,7 +16,7 @@ class AuthController extends Controller
         $cate = new UserModel;
         $req = $cate->insert($request);
         $_SESSION['email'] = $req;
-        header('Location:' . ADMIN_URL . 'admin');
+        header('Location:' . ADMIN_URL . 'user');
     }
     public function login()
     {
@@ -31,7 +31,7 @@ class AuthController extends Controller
         if (is_array($req) && !(empty($req))) {        
             $_SESSION['login']['email'] = $_POST['email'];
             //var_dump($_SESSION['login']['email']);die;
-            header('Location:' . ADMIN_URL . 'admin');
+            header('Location:' . ADMIN_URL . 'user');
         } else {
             header('Location:' . ADMIN_URL . 'login');
         }

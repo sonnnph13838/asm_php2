@@ -12,6 +12,7 @@ class UserController extends Controller
         $this->view('admin/user.list',['list'=>$list]);
     }
     public function edit(){
+        $this->checkLogin();
         $users =  UserModel::find($_GET['id']);
         $fidUser = array($users);
         $this->view('admin.user.edit',['user'=>$fidUser]);
@@ -62,6 +63,7 @@ class UserController extends Controller
     );
     }
     public function del(){
+        $this->checkLogin();
         $id = $_GET['id'];
         UserModel::delete($id);
         $list = UserModel::all();

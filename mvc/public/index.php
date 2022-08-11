@@ -16,14 +16,11 @@ Router::get('/detail_room',[RoomController::class,'detail']);
 //admin
 Router::get('/admin',[AdminController::class,'indexAdmin']);
 //user
-//var_dump($_SESSION['email']);die;
-if($_SESSION){
+
 Router::get('/user/edit',[UserController::class,'edit']);
 Router::post('/user/edit',[UserController::class,'saveEdit']);
 Router::get('/user/del',[UserController::class,'del']);
-}else{
-Router::get('/login',[AuthController::class,'login']);
-}
+
 Router::get('/user',[UserController::class,'listUser']);
 
 //type
