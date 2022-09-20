@@ -12,6 +12,7 @@ class Router{
             'method'=>$method,
             'handler'=>$handler
         ];
+        var_dump(111);
     }
     public static function get($path, $handler){
         static::addHandler($path,self::METHOD_GET,$handler);
